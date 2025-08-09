@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "url": "aula-virtual-alphamedic",
+    "nombre": "Aula Virtual Alphamedic",
+    "imagen_banner": "https://qh2ensep0f.ufs.sh/f/tJ39KzeM4kyTsFgtzrU07cXJYjM94w1GOyDu3VPUBR2Hm6i8",
+    "imagen_perfil": "/images/portfolio/perfil-alphamedic-aula.jpg",
+    "caracteristicas": [
+      "Plataforma E-learning creada desde cero",
+      "Gestión masiva de usuarios y matrículas",
+      "Módulo de exámenes con IA generativa",
+      "Biblioteca de recursos con gestión de contenidos (CRUD)",
+      "Diseño UI/UX para máxima presencia de marca",
+      "Entrega evolutiva en dos fases (MVP y Features v2)"
+    ],
+    "descripcion": "Alphamedic requería una plataforma de e-learning que se diferenciara de soluciones genéricas como Moodle para consolidar su presencia de marca. Desarrollamos una solución a la medida desde cero, entregando un sistema robusto capaz de gestionar una alta concurrencia de estudiantes. La primera fase, lanzada el 6 de enero de 2025, permitió la gestión de cursos y exámenes. La segunda fase, implementada el 4 de agosto, introdujo innovaciones clave como una biblioteca digital y un revolucionario sistema de exámenes que utiliza IA generativa para crear evaluaciones a partir de los temas seleccionados, ofreciendo una experiencia educativa única y avanzada.",
+    "link": "https://aula.alphamedic.xyz"
+  },
+  {
+    "id": 2,
+    "url": "pagina-web-alphamedic",
+    "nombre": "Página Web Corporativa Alphamedic",
+    "imagen_banner": "https://qh2ensep0f.ufs.sh/f/tJ39KzeM4kyTQFFg2p5tg6qTscyldSipIZFOwjMrLu24nH8x",
+    "imagen_perfil": "/images/portfolio/perfil-alphamedic-web.jpg",
+    "caracteristicas": [
+      "Sitio web de marketing y captación",
+      "Generación dinámica de brochures por curso",
+      "Diseño enfocado en la propuesta de valor",
+      "Integración visual con el ecosistema de la marca",
+      "Totalmente responsive y optimizado para SEO"
+    ],
+    "descripcion": "Como complemento estratégico a su aula virtual, construimos la página web corporativa de Alphamedic. El sitio está diseñado para comunicar eficazmente el valor diferencial de la marca y atraer nuevos estudiantes. Su característica principal es la generación de 'brochures' dinámicos y personalizados para cada curso, presentando la información de manera atractiva y convincente para impulsar la matriculación.",
+    "link": "https://alphamedic.xyz"
+  },
+  {
+    "id": 3,
+    "url": "arbulu-y-terry-sac",
+    "nombre": "Web Institucional Arbulu y Terry S.A.C.",
+    "imagen_banner": "https://qh2ensep0f.ufs.sh/f/tJ39KzeM4kyTsP0j6ZU07cXJYjM94w1GOyDu3VPUBR2Hm6i8",
+    "imagen_perfil": "/images/portfolio/perfil-arbulu.jpg",
+    "caracteristicas": [
+      "Sitio web corporativo para empresa constructora",
+      "Portafolio de proyectos de ingeniería y construcción",
+      "Diseño profesional enfocado en la confianza y solidez",
+      "Disponibilidad 24/7 y rendimiento optimizado",
+      "Canal directo de contacto para nuevos clientes"
+    ],
+    "descripcion": "Arbulu y Terry Ingenieros S.A.C., una consolidada empresa del rubro de la construcción, nos confió el desarrollo de su presencia digital. Creamos una página web institucional que proyecta su experiencia y profesionalismo. El sitio presenta de forma clara sus servicios, muestra su portafolio de proyectos y funciona como una herramienta clave para la captación de nuevos clientes. El proyecto fue concluido, aceptado y entregado satisfactoriamente, estando actualmente 100% operativo.",
+    "link": "https://www.arbuluyterry.com"
+  }
+]
