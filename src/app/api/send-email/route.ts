@@ -3,8 +3,8 @@ import { Resend } from 'resend';
 import { EmailToClient } from '@/components/emails/email-to-client';
 import { EmailToOwner } from '@/components/emails/email-to-owner';
 
-const fromEmail = 'Contacto Harkaysoft <onboarding@harkaysoft.com>'; // ¡REVISA ESTO!
-const ownerEmail = 'jhangmez.pe@gmail.com'; 
+const fromEmail = 'Contacto Harkaysoft <jhan@harkaysoft.com>';
+const ownerEmail = 'jhangomez25@gmail.com'; 
 
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY;
