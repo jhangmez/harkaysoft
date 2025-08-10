@@ -5,6 +5,14 @@ import proyectos from "@/data/proyectos.json";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowUpRight } from "lucide-react";
 
+// 1. Definimos un tipo explícito para las props de la página.
+// Esto le dice a TypeScript exactamente qué esperar.
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
 // Genera las páginas estáticas en el momento de la compilación (build time)
 export async function generateStaticParams() {
   return proyectos.map((proyecto) => ({
@@ -18,11 +26,11 @@ function getProjectData(slug: string) {
   return project;
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: Props) {
   const project = getProjectData(params.slug);
 
   if (!project) {
-    notFound(); // Muestra una página 404 si el proyecto no existe
+    notFound();
   }
 
   return (
