@@ -3,31 +3,52 @@ import Link from "next/link";
 import proyectos from "@/data/proyectos.json";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowUpRight } from "lucide-react";
+import type { Metadata } from "next"; // 1. Importa el tipo Metadata
 
-// 1. Definimos un tipo explícito para las props de la página.
-// Esto le dice a TypeScript exactamente qué esperar.
+// 2. Define el tipo de las props de forma canónica.
+// Este tipo se usará tanto para la metadata como para la página.
 type Props = {
   params: {
     slug: string;
   };
 };
 
-// Genera las páginas estáticas en el momento de la compilación (build time)
+// Función para obtener los datos del proyecto (la mantienes igual)
+function getProjectData(slug: string) {
+  const project = proyectos.find((p) => p.url === slug);
+  return project;
+}
+
+// 3. (CLAVE) Añade una función `generateMetadata` que use el mismo tipo `Props`.
+// Esto fuerza a Next.js a entender la estructura de props de esta ruta.
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const project = getProjectData(params.slug);
+
+  if (!project) {
+    return {
+      title: "Proyecto no encontrado",
+      description: "La página que buscas no existe.",
+    };
+  }
+
+  return {
+    title: `${project.nombre} | Harkaysoft`,
+    description: project.descripcion,
+  };
+}
+
+// La función generateStaticParams se mantiene igual
 export async function generateStaticParams() {
   return proyectos.map((proyecto) => ({
     slug: proyecto.url,
   }));
 }
 
-// Función para obtener los datos de un proyecto específico
-function getProjectData(slug: string) {
-  const project = proyectos.find((p) => p.url === slug);
-  return project;
-}
-
+// 4. Usa el tipo `Props` en tu componente de página.
 export default function ProjectPage({ params }: Props) {
   const project = getProjectData(params.slug);
 
+  // Aunque generateMetadata ya lo maneja, es bueno mantener esta guarda.
   if (!project) {
     notFound();
   }
