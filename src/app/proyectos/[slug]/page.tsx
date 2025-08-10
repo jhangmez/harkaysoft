@@ -3,26 +3,25 @@ import Link from "next/link";
 import proyectos from "@/data/proyectos.json";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowUpRight } from "lucide-react";
-import type { Metadata } from "next"; // 1. Importa el tipo Metadata
+import type { Metadata } from "next";
 
-// 2. Define el tipo de las props de forma canónica.
-// Este tipo se usará tanto para la metadata como para la página.
+// 1. El tipo de 'Props' ahora debe reflejar que 'params' es una Promise.
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-// Función para obtener los datos del proyecto (la mantienes igual)
+// Función para obtener los datos del proyecto (se mantiene igual)
 function getProjectData(slug: string) {
   const project = proyectos.find((p) => p.url === slug);
   return project;
 }
 
-// 3. (CLAVE) Añade una función `generateMetadata` que use el mismo tipo `Props`.
-// Esto fuerza a Next.js a entender la estructura de props de esta ruta.
+// 2. La función 'generateMetadata' ahora es `async` y debe usar `await` para obtener los params.
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = getProjectData(params.slug);
+  const { slug } = await params; // Se resuelve la Promise
+  const project = getProjectData(slug);
 
   if (!project) {
     return {
@@ -44,11 +43,12 @@ export async function generateStaticParams() {
   }));
 }
 
-// 4. Usa el tipo `Props` en tu componente de página.
-export default function ProjectPage({ params }: Props) {
-  const project = getProjectData(params.slug);
+// 3. El componente de página AHORA DEBE SER `async`.
+export default async function ProjectPage({ params }: Props) {
+  // 4. Usamos `await` para resolver la Promise y obtener el slug.
+  const { slug } = await params;
+  const project = getProjectData(slug);
 
-  // Aunque generateMetadata ya lo maneja, es bueno mantener esta guarda.
   if (!project) {
     notFound();
   }
