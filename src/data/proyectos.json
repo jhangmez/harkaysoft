@@ -47,5 +47,23 @@
     ],
     "descripcion": "Arbulu y Terry Ingenieros S.A.C., una consolidada empresa del rubro de la construcción, nos confió el desarrollo de su presencia digital. Creamos una página web institucional que proyecta su experiencia y profesionalismo. El sitio presenta de forma clara sus servicios, muestra su portafolio de proyectos y funciona como una herramienta clave para la captación de nuevos clientes. El proyecto fue concluido, aceptado y entregado satisfactoriamente, estando actualmente 100% operativo.",
     "link": "https://www.arbuluyterry.com"
+  },
+  {
+    "id": 4,
+    "url": "hanpy",
+    "nombre": "hanpy",
+    "imagen_banner": "https://qh2ensep0f.ufs.sh/f/tJ39KzeM4kyTOHCMx8WPdB8y54rXEoPqTuF6MwmScaxUeWvY",
+    "imagen_perfil": "/images/portfolio/perfil-hanpy.jpg",
+    "caracteristicas": [
+      "Plataforma de aprendizaje gamificado para ciencias biomédicas",
+      "Exámenes gratuitos de 10 preguntas disponibles cada hora",
+      "Leaderboard global para competir y medir el progreso",
+      "Feedback instantáneo y detallado al finalizar cada examen",
+      "Plan Premium con exámenes de 50 preguntas y categorías personalizables",
+      "Innovador sistema de preguntas por voz y texto con puntuación por IA"
+    ],
+    "descripcion": "Hanpy es una plataforma de gamificación diseñada para revolucionar el aprendizaje en ciencias biomédicas. Cada hora, los usuarios pueden acceder a un nuevo examen gratuito de 10 preguntas, recibir feedback instantáneo y competir en un leaderboard global. Su plan Premium potencia la preparación para exámenes clave como el ENAM y Residentado Médico, ofreciendo tests de 50 preguntas, selección de categorías específicas y un sistema avanzado de evaluación por voz y texto, convirtiendo el estudio en un desafío constante y motivador.",
+    "link": "https://hanpy.harkaysoft.com",
+    "esNuevo": true
   }
 ]

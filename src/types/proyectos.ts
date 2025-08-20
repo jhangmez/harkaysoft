@@ -9,4 +9,5 @@ export interface Proyecto {
   caracteristicas: string[];
   descripcion: string;
   link: string;
+  esNuevo?: boolean;
 }

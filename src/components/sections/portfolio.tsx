@@ -1,15 +1,22 @@
 import Link from "next/link";
 import proyectos from "@/data/proyectos.json";
 import { Proyecto } from "@/types/proyectos";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"; // Asegúrate de que la ruta es correcta
+import { Badge } from "@/components/ui/badge"; // Importa el componente Badge
 
 export function Portfolio() {
   let proyectosData: Proyecto[] = proyectos as Proyecto[];
+
   try {
-    // Intentamos cargar los proyectos. Si el JSON está vacío o malformado, el catch lo manejará.
     proyectosData = proyectos;
   } catch (error) {
     console.error("Error al cargar los proyectos:", error);
-    // proyectosData se mantiene como un array vacío.
   }
 
   // Condición: si no hay proyectos, muestra un mensaje de "Próximamente".
@@ -53,28 +60,44 @@ export function Portfolio() {
             <Link
               href={`/proyectos/${proyecto.url}`}
               key={proyecto.id}
-              className="group block overflow-hidden rounded-lg border hover:shadow-xl transition-shadow duration-300"
+              className="group block"
             >
-              <div className="relative h-48 w-full">
-                {/* Se usa <img> con object-cover para llenar el contenedor y loading="lazy" para optimizar la carga */}
-                <img
-                  src={proyecto.imagen_banner}
-                  alt={`Banner del proyecto ${proyecto.nombre}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6 bg-card">
-                <h3 className="font-pop font-semibold text-xl">
-                  {proyecto.nombre}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground line-clamp-2 tracking-wide">
-                  {proyecto.descripcion}
-                </p>
-                <span className="mt-4 inline-block text-sm font-medium text-primary group-hover:underline">
-                  Ver detalles del proyecto &rarr;
-                </span>
-              </div>
+              <Card className="h-full flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <img
+                    src={proyecto.imagen_banner}
+                    alt={`Banner del proyecto ${proyecto.nombre}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  {/* Badge "NUEVO" condicional */}
+                  {proyecto.esNuevo && (
+                    <Badge className="absolute top-2 right-2 bg-primary/80 text-primary-foreground">
+                      NUEVO
+                    </Badge>
+                  )}
+                </div>
+
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <CardTitle className="font-pop font-semibold text-xl">
+                      {proyecto.nombre}
+                    </CardTitle>
+                  </CardHeader>
+
+                  <CardContent className="flex-grow">
+                    <p className="text-sm text-muted-foreground line-clamp-2 tracking-wide">
+                      {proyecto.descripcion}
+                    </p>
+                  </CardContent>
+
+                  <CardFooter>
+                    <span className="text-sm font-medium text-primary group-hover:underline">
+                      Ver detalles del proyecto &rarr;
+                    </span>
+                  </CardFooter>
+                </div>
+              </Card>
             </Link>
           ))}
         </div>
