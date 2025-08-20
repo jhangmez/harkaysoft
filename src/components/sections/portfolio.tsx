@@ -92,7 +92,7 @@ export function Portfolio() {
                   </CardContent>
 
                   <CardFooter>
-                    <span className="text-sm font-medium text-primary group-hover:underline">
+                    <span className="text-sm font-medium text-primary group-hover:underline pt-2">
                       Ver detalles del proyecto &rarr;
                     </span>
                   </CardFooter>
